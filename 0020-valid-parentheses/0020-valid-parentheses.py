@@ -2,8 +2,6 @@ class Solution:
     def isValid(self, s: str) -> bool:
         if(len(s) == 0 or len(s) % 2 != 0):
             return False
-        if(s[0] == ')' or s[0] == '}' or s[0] == ']'):
-            return False
 
         dict = {'(':')','[':']', '{':'}' }
         stack = []
