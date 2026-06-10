@@ -4,12 +4,6 @@ class Solution:
         left = 0
         right = len(nums)-1
 
-        #edge cases
-        if target > nums[right]:
-            return right + 1
-        elif target < nums[left]:
-            return 0
-
         #binary search
         while left <= right:
             mid = left + (right - left) // 2
