@@ -5,8 +5,4 @@ class Solution:
         for i in range(size):
             total += i
         
-        numstotal = 0
-        for n in nums:
-            numstotal+=n
-        
-        return total - numstotal
+        return total - sum(nums)
