@@ -14,7 +14,6 @@ class Solution:
                 stack2.pop()
             elif i != '#':
                 stack2.append(i) 
-        print(stack1)
-        print(stack2)
+                
         return stack1 == stack2
         
