@@ -4,18 +4,15 @@ class Solution:
         Do not return anything, modify s in-place instead.
         """
 
-        if not s:
-            return
+        f = 0 
+        b = len(s)-1
 
-        front = 0 
-        back = len(s)-1
-
-        while front < back:
-            tmp = s[front]
-            s[front] = s[back]
-            s[back] = tmp
-            front+=1
-            back-=1
+        while f < b:
+            tmp = s[f]
+            s[f] = s[b]
+            s[b] = tmp
+            f+=1
+            b-=1
 
 
 
