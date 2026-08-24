@@ -7,17 +7,18 @@
 
 from collections import deque
 
+
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
 
-        def rightSideView(root):
+        def rightSide(root):
 
             res = []
             queue = deque()
 
             if root:
                 queue.append(root)
-            
+
             while len(queue) > 0:
                 farthestRight = len(queue) - 1
                 for i in range(len(queue)):
@@ -30,6 +31,4 @@ class Solution:
                         res.append(curr.val)
             return res
 
-
-        return rightSideView(root)
-        
+        return rightSide(root)
