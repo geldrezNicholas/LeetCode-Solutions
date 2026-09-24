@@ -1,0 +1,33 @@
+class Solution:
+    def maxAreaOfIsland(self, grid: list[list[int]]) -> int:
+
+        if not grid:
+            return 0
+        
+        ROWS, COLS = len(grid), len(grid[0])
+    
+        def dfsCount(r, c):
+            if r == ROWS or c == COLS or min(r, c) < 0 or grid[r][c] == 0:
+                return 0
+            
+            counter = 1
+            grid[r][c] = 0
+            counter += dfsCount(r + 1, c)
+            counter += dfsCount(r - 1, c)
+            counter += dfsCount(r, c + 1)
+            counter += dfsCount(r, c - 1)
+            return counter
+
+
+        maxArea = 0
+        for row in range(ROWS):
+            for col in range(COLS):
+                if grid[row][col] == 1:
+                    currArea = dfsCount(row, col)
+                    maxArea = max(maxArea, currArea)
+        
+        return maxArea
+
+
+
+        
